@@ -10,7 +10,6 @@ import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.GridLayout;
 import android.widget.GridView;
 import android.widget.Toast;
 
@@ -18,6 +17,7 @@ import cn.edu.gdmec.android.mobileguard.R;
 import cn.edu.gdmec.android.mobileguard.m1home.adapter.HomeAdapter;
 import cn.edu.gdmec.android.mobileguard.m2theftgurad.dialog.InterPasswordDialog;
 import cn.edu.gdmec.android.mobileguard.m2theftgurad.dialog.SetUpPasswordDialog;
+import cn.edu.gdmec.android.mobileguard.m2theftgurad.utils.LostFindActivity;
 import cn.edu.gdmec.android.mobileguard.m2theftgurad.utils.MD5Utils;
 
 public class HomeActivity extends AppCompatActivity {
@@ -119,6 +119,7 @@ private void showInterPswdDialog(){
                 Toast.makeText(HomeActivity.this,"密码不能为空!",Toast.LENGTH_LONG).show();
             }else if (password.equals(MD5Utils.encode(mInPswdDialog.getPassword()))){
                 mInPswdDialog.dismiss();
+                startActivity(LostFindActivity.class);
                 Toast.makeText(HomeActivity.this,"可以进入手机防盗模块",Toast.LENGTH_LONG).show();
 
             }else{

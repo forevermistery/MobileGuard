@@ -23,6 +23,12 @@
             android:name=".m1home.HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme"></activity>
+<activity android:name=".m2theftgurad.utils.Setup1Activity"/>
+        <activity android:name=".m2theftgurad.utils.Setup2Activity"/>
+        <activity android:name=".m2theftgurad.utils.Setup3Activity"/>
+        <activity android:name=".m2theftgurad.utils.Setup4Activity"/>
+        <activity android:name=".m2theftgurad.utils.LostFindActivity"/>
+
     </application>
 
 </manifest>
