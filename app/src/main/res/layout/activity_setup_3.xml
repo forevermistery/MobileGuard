@@ -38,7 +38,7 @@
             android:layout_margin="15dp"
 
             android:gravity="center_vertical"
-            android:background="@android:color/white"
+
             android:orientation="horizontal">
             <EditText
                 android:id="@+id/et_inputphone"
