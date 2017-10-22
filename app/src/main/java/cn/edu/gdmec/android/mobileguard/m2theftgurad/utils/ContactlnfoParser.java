@@ -35,14 +35,14 @@ public class ContactlnfoParser {
                 //2.根据联系人的id，查询data表，把这个id的数据取出来
                 //系统api 查询data表的时候，不是真正的查询data表 而是查询的data表的视图
                 Cursor dataCursor = resolver.query(datauri, new String[]{
-                        "data1", "mimetype"}, "raw_contact_id=?", new String[]{id}, null
-                );
+                        "data1", "mimetype"}, "raw_contact_id=?",
+                        new String[]{id}, null);
                 while (dataCursor.moveToNext()) {
                     String data1 = dataCursor.getString(0);
                     String mimetype = dataCursor.getString(1);
                     if ("vnd.android.cursor.item/name".equals(mimetype)) {
                         System.out.println("姓名=" + data1);
-                        info.phone = data1;
+                        info.name = data1;
                     }else if ("vnd.android.cursor.item/phone_v2".equals(mimetype)){
                         System.out.print("电话="+data1);
                         info.phone=data1;
@@ -65,9 +65,11 @@ public class ContactlnfoParser {
         if (mCursor != null) {
             while(mCursor.moveToNext()){
             Contactlnfo info = new Contactlnfo();
-            int nameFieldColumnIndex = mCursor.getColumnIndex("name");
+            int nameFieldColumnIndex = mCursor.
+                    getColumnIndex("name");
             info.name = mCursor.getString(nameFieldColumnIndex);
-            int numberFieldColumnIndex = mCursor.getColumnIndex("number");
+            int numberFieldColumnIndex = mCursor.
+                    getColumnIndex("number");
             info.phone = mCursor.getString(numberFieldColumnIndex);
             infos.add(info);
         }
