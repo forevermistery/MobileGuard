@@ -9,13 +9,8 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
-
 import cn.edu.gdmec.android.mobileguard.R;
-
-/**
- * Created by Administrator on 2017/10/13 0013.
- */
+import cn.edu.gdmec.android.mobileguard.m2theftgurad.ContactSelectActivity;
 
 public class Setup3Activity extends BaseSetUpActivity implements View.OnClickListener {
     private EditText mInputPhone;
@@ -23,6 +18,7 @@ public class Setup3Activity extends BaseSetUpActivity implements View.OnClickLis
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setup_3);
+
         ((RadioButton)findViewById(R.id.rb_third)).setChecked(true);
 
         ((RadioButton)findViewById(R.id.rb_third)).setChecked(true);
@@ -45,10 +41,12 @@ public class Setup3Activity extends BaseSetUpActivity implements View.OnClickLis
         edit.commit();
         startActivityAndFinishSelf(Setup4Activity.class);
     }
+
     @Override
     public void showPre(){
         startActivityAndFinishSelf(Setup2Activity.class);
     }
+
     @Override
     public void onClick(View view){
         switch (view.getId()){

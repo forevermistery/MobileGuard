@@ -61,10 +61,10 @@ public class ContactlnfoParser {
         if (mCursor != null) {
             while(mCursor.moveToNext()){
             Contactlnfo info = new Contactlnfo();
-            int nameFiledColumnIndex = mCursor.getColumnIndex("name");
-            info.name = mCursor.getString(nameFiledColumnIndex);
-            int numberFiledColumnIndex = mCursor.getColumnIndex("number");
-            info.phone = mCursor.getString(numberFiledColumnIndex);
+            int nameFieldColumnIndex = mCursor.getColumnIndex("name");
+            info.name = mCursor.getString(nameFieldColumnIndex);
+            int numberFieldColumnIndex = mCursor.getColumnIndex("number");
+            info.phone = mCursor.getString(numberFieldColumnIndex);
             infos.add(info);
         }
     }

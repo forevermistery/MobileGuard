@@ -20,7 +20,7 @@ public class Setup2Activity extends BaseSetUpActivity implements View.OnClickLis
     private Button mBindSIMBtn;
 
     @Override
-    public    void onCreate(Bundle savedInstanceState){
+    public  void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setup_2);
         ((RadioButton)findViewById(R.id.rb_second)).setChecked(true);

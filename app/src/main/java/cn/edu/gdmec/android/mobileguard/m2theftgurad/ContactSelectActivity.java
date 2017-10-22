@@ -1,9 +1,8 @@
-package cn.edu.gdmec.android.mobileguard.m2theftgurad.utils;
+package cn.edu.gdmec.android.mobileguard.m2theftgurad;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.widget.TextViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -11,14 +10,12 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 import java.util.List;
-
 
 import cn.edu.gdmec.android.mobileguard.R;
 import cn.edu.gdmec.android.mobileguard.m2theftgurad.adapter.ContactAdapter;
 import cn.edu.gdmec.android.mobileguard.m2theftgurad.entity.Contactlnfo;
+import cn.edu.gdmec.android.mobileguard.m2theftgurad.utils.ContactlnfoParser;
 
 /**
  * Created by Administrator on 2017/10/20 0020.
@@ -52,7 +49,7 @@ private void initView(){
     mLeftImgv.setOnClickListener(this);
     mLeftImgv.setImageResource(R.drawable.back);
 
-    findViewById(R.id.rl_title).setBackgroundColor(getResources().getColor(R.color.purple));
+    findViewById(R.id.rl_titlebar).setBackgroundColor(getResources().getColor(R.color.purple));
     mListView=(ListView)findViewById(R.id.lv_contact);
     new Thread(){
         public void run(){
