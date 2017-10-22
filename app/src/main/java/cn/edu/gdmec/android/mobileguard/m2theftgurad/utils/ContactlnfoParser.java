@@ -24,7 +24,8 @@ public class ContactlnfoParser {
         Uri uri = Uri.parse("content://com.android.contacts/raw_contacts");
         Uri datauri = Uri.parse("content://com.android.contacts/data");
         List<Contactlnfo> infos = new ArrayList<Contactlnfo>();
-        Cursor cursor = resolver.query(uri, new String[]{"contact_id"}, null, null, null);
+        Cursor cursor = resolver.query(uri, new String[]{"contact_id"},
+                null, null, null);
         while (cursor.moveToNext()) {
             String id = cursor.getString(0);
             if (id != null) {
@@ -42,6 +43,9 @@ public class ContactlnfoParser {
                     if ("vnd.android.cursor.item/name".equals(mimetype)) {
                         System.out.println("姓名=" + data1);
                         info.phone = data1;
+                    }else if ("vnd.android.cursor.item/phone_v2".equals(mimetype)){
+                        System.out.print("电话="+data1);
+                        info.phone=data1;
                     }
                 }
                 if (TextUtils.isEmpty(info.name) && TextUtils.isEmpty(info.phone))
