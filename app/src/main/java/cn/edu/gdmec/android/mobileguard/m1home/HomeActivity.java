@@ -1,5 +1,7 @@
 package cn.edu.gdmec.android.mobileguard.m1home;
 
+import android.app.admin.DevicePolicyManager;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -17,6 +19,7 @@ import cn.edu.gdmec.android.mobileguard.R;
 import cn.edu.gdmec.android.mobileguard.m1home.adapter.HomeAdapter;
 import cn.edu.gdmec.android.mobileguard.m2theftgurad.dialog.InterPasswordDialog;
 import cn.edu.gdmec.android.mobileguard.m2theftgurad.dialog.SetUpPasswordDialog;
+import cn.edu.gdmec.android.mobileguard.m2theftgurad.receiver.MyDeviceAdminReceiver;
 import cn.edu.gdmec.android.mobileguard.m2theftgurad.utils.LostFindActivity;
 import cn.edu.gdmec.android.mobileguard.m2theftgurad.utils.MD5Utils;
 
@@ -24,6 +27,8 @@ public class HomeActivity extends AppCompatActivity {
     private GridView gv_home;
     private long mExitTime;
     private SharedPreferences msharedPreferences;
+    private DevicePolicyManager policyManager;
+    private ComponentName componentName;
 
 
     @Override
@@ -57,7 +62,20 @@ public class HomeActivity extends AppCompatActivity {
 
 
         });
+        //1.获取设备管理员
+        policyManager=(DevicePolicyManager) getSystemService(DEVICE_POLICY_SERVICE);
+        //申请权限，MyDeviceAdminReciever继承自DeviceAdminReceiver
+        componentName=new ComponentName(this, MyDeviceAdminReceiver.class);
+        boolean active=policyManager.isAdminActive(componentName);
+        if (!active){
+            Intent intent=new Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN);
+            intent.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN,componentName);
+            intent.putExtra(DevicePolicyManager.EXTRA_ADD_EXPLANATION,"获取超级管理员权限，用于远程锁屏和清除数据");
+            startActivity(intent);
+
+        }
     }
+
 
 
 
