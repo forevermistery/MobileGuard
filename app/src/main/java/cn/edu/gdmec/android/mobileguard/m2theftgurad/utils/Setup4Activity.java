@@ -57,6 +57,7 @@ public class Setup4Activity extends BaseSetUpActivity {
     @Override
     public void showNext(){
         //跳转至防盗保护页面
+        //1
         SharedPreferences.Editor editor = sp.edit();
         editor.putBoolean("isSetUp",true);
         editor.commit();
