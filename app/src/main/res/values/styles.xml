@@ -30,5 +30,8 @@
 
 
     </style>
-
+    //无标题样式
+    <style name="notitle">
+        <item name="android:windowNoTitle">true</item>
+    </style>
 </resources>

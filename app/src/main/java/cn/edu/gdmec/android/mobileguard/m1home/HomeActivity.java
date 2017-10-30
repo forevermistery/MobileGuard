@@ -22,6 +22,8 @@ import cn.edu.gdmec.android.mobileguard.m2theftgurad.dialog.SetUpPasswordDialog;
 import cn.edu.gdmec.android.mobileguard.m2theftgurad.receiver.MyDeviceAdminReceiver;
 import cn.edu.gdmec.android.mobileguard.m2theftgurad.utils.LostFindActivity;
 import cn.edu.gdmec.android.mobileguard.m2theftgurad.utils.MD5Utils;
+import cn.edu.gdmec.android.mobileguard.m3communicationguard.reveiver.AddBlackNumberActivity;
+import cn.edu.gdmec.android.mobileguard.m3communicationguard.reveiver.SecurityPhoneActivity;
 
 public class HomeActivity extends AppCompatActivity {
     private GridView gv_home;
@@ -56,6 +58,8 @@ public class HomeActivity extends AppCompatActivity {
 
                         }
                         break;
+                    case 1:
+                        startActivity(SecurityPhoneActivity.class);
                 }
             }
 
@@ -76,6 +80,7 @@ public class HomeActivity extends AppCompatActivity {
         }
     }
 
+//进入安全卫士
 
 
 
@@ -180,5 +185,7 @@ if (TextUtils.isEmpty(password)){
     return true;
 }
 
+
 }
+
 

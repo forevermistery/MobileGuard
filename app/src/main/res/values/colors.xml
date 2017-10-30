@@ -3,6 +3,9 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-
+<!--防盗模块2017.10.10-->
     <color name="purple">#5542B8</color>
+    <!--通讯卫士模块2017.10.30-->
+    <color name="bright_purple">#C218D9</color>
+    <color name="light_gary">#D1D0CE</color>
 </resources>
