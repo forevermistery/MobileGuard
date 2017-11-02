@@ -31,7 +31,8 @@ public boolean add(BlackContactInfo blackContactInfo){
     SQLiteDatabase db=blackMumberOpenHelper.getWritableDatabase();
     ContentValues values=new ContentValues();
     if (blackContactInfo.phoneNumber.startsWith("+86")){
-        blackContactInfo.phoneNumber=blackContactInfo.phoneNumber.substring(3,blackContactInfo.phoneNumber.length());}
+        blackContactInfo.phoneNumber=blackContactInfo.phoneNumber.substring(3,blackContactInfo.phoneNumber.length());
+    }
 
         values.put("number",blackContactInfo.phoneNumber);
         values.put("name",blackContactInfo.contactName);
@@ -64,7 +65,8 @@ pagesize   每一个页面的大小
  */
 public List<BlackContactInfo> getPageBlackNumber(int pagenumber,int pagesize){
     SQLiteDatabase db=blackMumberOpenHelper.getReadableDatabase();
-    Cursor cursor=db.rawQuery("select number,mode,name from blacknumber limit ? offset ?",new String[]{String.valueOf(pagesize),String.valueOf(pagesize*pagenumber)});
+    Cursor cursor=db.rawQuery("select number,mode,name from blacknumber limit ? offset ?",
+            new String[]{String.valueOf(pagesize),String.valueOf(pagesize*pagenumber)});
    List<BlackContactInfo> mBlackContactInfos=new ArrayList<BlackContactInfo>();
     while(cursor.moveToNext()){
         BlackContactInfo info=new BlackContactInfo();

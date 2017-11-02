@@ -82,9 +82,10 @@ public class SecurityPhoneActivity extends AppCompatActivity implements View.OnC
             @Override
             public void onScrollStateChanged(AbsListView absListView,int i){
                 switch (i){//i是列表的滚动状态
-                    //case AbsListView.onScrollListener.SCROLL_STATE_IDLE:  //列表滑动后禁止
-                    //case AbsListView.onScrollListener.SCROLL_STATE_TOUCH_SCROLL:  //手指正拖着列表滑动
-                    case AbsListView.OnScrollListener.SCROLL_STATE_FLING:  //列表正自由滑动
+                    //case AbsListView.OnScrollListener.SCROLL_STATE_IDLE:  //列表滑动后禁止
+                    //case AbsListView.OnScrollListener.SCROLL_STATE_TOUCH_SCROLL:  //手指正拖着列表滑动
+                    //case AbsListView.OnScrollListener.SCROLL_STATE_FLING:  //列表正自由滑动
+                    case AbsListView.OnScrollListener.SCROLL_STATE_IDLE:
                        //获取最后一个可见条目
                         int lastVisiblePosition=mListView.getLastVisiblePosition();
                         //如果当前条目是最后一个 增查询更多数据
