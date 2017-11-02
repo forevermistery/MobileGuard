@@ -1,6 +1,9 @@
 <resources>
 
     <!-- Base application theme. -->
+    <!--Theme.AppCompat.Light.NoActionBar-->
+    <!--Theme.AppCompat.Light.DarkActionBar-->
+
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
@@ -31,7 +34,17 @@
 
     </style>
     //无标题样式
-    <style name="notitle">
+     <!--v4                    android:theme="@android:style/Theme.Light.NoTitleBar"-->
+     <!--v7(继承appcompat)     android:theme="@style/Theme.AppCompat.Light.NoActionBar"-->
+    <style name="notitle" parent="Theme.AppCompat.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowNoTitle">true</item>
     </style>
+
+
+
+
 </resources>

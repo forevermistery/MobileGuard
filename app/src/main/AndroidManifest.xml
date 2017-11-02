@@ -84,11 +84,13 @@
         <!--通讯卫士部分-->
 
         <activity android:name=".m3communicationguard.reveiver.AddBlackNumberActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
            />
 
 
 
         <activity android:name=".m3communicationguard.reveiver.SecurityPhoneActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             />
         <receiver android:name=".m3communicationguard.reveiver.InterceptCallReciever"
                 android:enabled="true"
