@@ -63,6 +63,7 @@ public class AddBlackNumberActivity extends AppCompatActivity implements View.On
         setContentView(R.layout.activity_add_black_number);
         dao=new BlackNumberDao(AddBlackNumberActivity.this);
         initView();
+
     }
     @Override
     public  void onClick(View view ){
