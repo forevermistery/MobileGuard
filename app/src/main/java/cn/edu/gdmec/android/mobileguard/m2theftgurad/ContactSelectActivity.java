@@ -65,6 +65,7 @@ private void initView(){
             Intent intent=new Intent();
             intent.putExtra("phone",item.phone);
             intent.putExtra("name",item.name);//补充1
+
             setResult(0,intent);
             finish();
         }

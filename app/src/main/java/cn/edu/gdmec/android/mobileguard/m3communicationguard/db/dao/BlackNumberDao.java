@@ -37,6 +37,7 @@ public boolean add(BlackContactInfo blackContactInfo){
         values.put("number",blackContactInfo.phoneNumber);
         values.put("name",blackContactInfo.contactName);
         values.put("mode",blackContactInfo.mode);
+        values.put("mtype",blackContactInfo.preventType);
     long rowid=db.insert("blacknumber",null,values);
     if (rowid==-1){//插入数据不成功
         return false;
@@ -65,7 +66,7 @@ pagesize   每一个页面的大小
  */
 public List<BlackContactInfo> getPageBlackNumber(int pagenumber,int pagesize){
     SQLiteDatabase db=blackMumberOpenHelper.getReadableDatabase();
-    Cursor cursor=db.rawQuery("select number,mode,name from blacknumber limit ? offset ?",
+    Cursor cursor=db.rawQuery("select number,mode,name,mtype from blacknumber limit ? offset ?",
             new String[]{String.valueOf(pagesize),String.valueOf(pagesize*pagenumber)});
    List<BlackContactInfo> mBlackContactInfos=new ArrayList<BlackContactInfo>();
     while(cursor.moveToNext()){
@@ -73,6 +74,7 @@ public List<BlackContactInfo> getPageBlackNumber(int pagenumber,int pagesize){
         info.phoneNumber=cursor.getString(0);
         info.mode=cursor.getInt(1);
         info.contactName=cursor.getString(2);
+        info.preventType=cursor.getString(3);
         mBlackContactInfos.add(info);
 
     }
