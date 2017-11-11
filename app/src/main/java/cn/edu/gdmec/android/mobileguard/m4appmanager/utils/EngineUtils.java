@@ -1,12 +1,17 @@
 package cn.edu.gdmec.android.mobileguard.m4appmanager.utils;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.widget.Toast;
 
+import cn.edu.gdmec.android.mobileguard.m4appmanager.AppManagerActivity;
 import cn.edu.gdmec.android.mobileguard.m4appmanager.entity.AppInfo;
+
+import static android.R.attr.permission;
+import static android.R.attr.version;
 
 /**
  * Created by Administrator on 2017/11/11 0011.
@@ -54,6 +59,26 @@ public class EngineUtils {
         }else{
             Toast.makeText(context,"系统应用无法卸载",Toast.LENGTH_LONG).show();
         }
+    }
+    //显示app信息
+    public static void showaboutApplication(Context context,AppInfo appInfo){
+        Uri uri = Uri.parse("market://details?id=app_id");
+        Intent it = new Intent(Intent.ACTION_VIEW, uri);
+        context.startActivity(it);
+//        Intent intent = new Intent();
+//        intent.setAction("android..APPLICATION_DETAILS_SETTINGS");
+//        intent.addCategory(Intent.CATEGORY_DEFAULT);
+//        intent.setData(Uri.parse("package:" + appInfo.packageName));
+
+//        new AlertDialog.Builder(AppManagerActivity.this)
+//                 .setTitle("MobileGuard")
+//                 .setMessage("Version:"+)
+//                 .setMessage("Install time:"+InstallTime)
+//                 .setMessage("Certificate issuer:"+certificate)
+//                 .setMessage("Permissions:"+permission)
+//                 .show();
+
+
     }
 
 }

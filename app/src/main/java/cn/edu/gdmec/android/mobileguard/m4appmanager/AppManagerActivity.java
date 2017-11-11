@@ -121,6 +121,7 @@ public class AppManagerActivity extends AppCompatActivity implements View.OnClic
         mSDMemoryTV=(TextView)findViewById(R.id.tv_sdmemory_appmanager);
         mAppNumTV=(TextView)findViewById(R.id.tv_appnumber);
         mListView=(ListView) findViewById(R.id.lv_appmanager);
+
       //拿到手机剩余内存和SD卡剩余内存
         getMemoryFromPhone();
         initData();
