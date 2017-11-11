@@ -24,15 +24,15 @@
             android:id="@+id/lv_appmanager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:listSelector="@color/transparent">
+            android:listSelector="@color/transparent"/>
             <TextView
                 android:id="@+id/tv_appnumber"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:padding="5dp"
                 android:textColor="@color/black"
                 android:background="@color/graye5"/>
-        </ListView>
+
     </FrameLayout>
 
 </LinearLayout>

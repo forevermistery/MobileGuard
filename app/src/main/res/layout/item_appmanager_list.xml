@@ -29,7 +29,8 @@
             style="@style/textview14sp"
             android:layout_marginTop="3dp"
             android:layout_alignLeft="@+id/tv_appname"
-            android:layout_toRightOf="@+id/imgv_appicon" />
+            android:layout_toRightOf="@+id/imgv_appicon"
+            android:layout_below="@+id/tv_appname"/>
     </RelativeLayout>
 
     <View
@@ -39,7 +40,7 @@
     <LinearLayout
         android:id="@+id/ll_option_app"
         android:layout_width="match_parent"
-        android:layout_height="1px"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="3dp"
         android:visibility="visible">

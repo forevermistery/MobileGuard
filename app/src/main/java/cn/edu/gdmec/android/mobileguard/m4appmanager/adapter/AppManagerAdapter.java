@@ -90,12 +90,18 @@ public class AppManagerAdapter extends BaseAdapter {
             viewHolder.mAppSizeTV=(TextView) view.findViewById(R.id.tv_appisroom);
             viewHolder.mAppNameTV=(TextView)view.findViewById(R.id.tv_appname);
             viewHolder.mLuanchAppTV=(TextView) view.findViewById(R.id.tv_launch_app);
+            viewHolder.mSettingAppTV=(TextView) view.findViewById(R.id.tv_setting_app);
+            viewHolder.mShareAppTV=(TextView) view.findViewById(R.id.tv_share_app);
+            viewHolder.mUninstallTV=(TextView) view.findViewById(R.id.tv_uninstall_app);
+            viewHolder.mAppOptionLL=(LinearLayout) view.findViewById(R.id.ll_option_app);
             view.setTag(viewHolder);
         }
         if (appInfo!=null){
-            viewHolder.mAppLocationTV.setText(appInfo.getAppLoaction(appInfo.isInRoom));
+            viewHolder.mAppLocationTV.setText(appInfo.getAppLoaction(appInfo.
+                    isInRoom));
             viewHolder.mAppIconImgv.setImageDrawable(appInfo.icon);
-            viewHolder.mAppSizeTV.setText(Formatter.formatFileSize(context,appInfo.appSize));
+            viewHolder.mAppSizeTV.setText(Formatter.formatFileSize(context,
+                    appInfo.appSize));
             viewHolder.mAppNameTV.setText(appInfo.appName);
             if (appInfo.isSelected){
                 viewHolder.mAppOptionLL.setVisibility(View.VISIBLE);}

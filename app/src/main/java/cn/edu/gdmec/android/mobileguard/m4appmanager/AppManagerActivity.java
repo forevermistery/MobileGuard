@@ -104,7 +104,7 @@ public class AppManagerActivity extends AppCompatActivity implements View.OnClic
         setContentView(R.layout.activity_app_manager);
         //注册广播
         receiver =new UninstallReceiver();
-        IntentFilter intentFilter=new IntentFilter(Intent.ACTION_MEDIA_REMOVED);
+        IntentFilter intentFilter=new IntentFilter(Intent.ACTION_PACKAGE_REMOVED);
         intentFilter.addDataScheme("package");
         registerReceiver(receiver,intentFilter);
         initView();

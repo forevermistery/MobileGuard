@@ -24,6 +24,7 @@ import cn.edu.gdmec.android.mobileguard.m2theftgurad.utils.LostFindActivity;
 import cn.edu.gdmec.android.mobileguard.m2theftgurad.utils.MD5Utils;
 import cn.edu.gdmec.android.mobileguard.m3communicationguard.reveiver.AddBlackNumberActivity;
 import cn.edu.gdmec.android.mobileguard.m3communicationguard.reveiver.SecurityPhoneActivity;
+import cn.edu.gdmec.android.mobileguard.m4appmanager.AppManagerActivity;
 
 public class HomeActivity extends AppCompatActivity {
     private GridView gv_home;
@@ -60,6 +61,8 @@ public class HomeActivity extends AppCompatActivity {
                         break;
                     case 1:
                         startActivity(SecurityPhoneActivity.class);
+                    case 2:
+                        startActivity(AppManagerActivity.class);
                 }
             }
 
