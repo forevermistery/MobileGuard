@@ -62,8 +62,9 @@ public class EngineUtils {
     }
     //显示app信息
     public static void showaboutApplication(Context context,AppInfo appInfo){
-        Uri uri = Uri.parse("market://details?id=app_id");
-        Intent it = new Intent(Intent.ACTION_VIEW, uri);
+
+        Intent it = new Intent();
+        it.setAction(Intent.ACTION_APPLICATION_PREFERENCES);
         context.startActivity(it);
 //        Intent intent = new Intent();
 //        intent.setAction("android..APPLICATION_DETAILS_SETTINGS");

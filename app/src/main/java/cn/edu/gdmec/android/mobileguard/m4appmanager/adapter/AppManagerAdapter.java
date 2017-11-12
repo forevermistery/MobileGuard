@@ -6,6 +6,7 @@ import android.text.format.Formatter;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -93,7 +94,7 @@ public class AppManagerAdapter extends BaseAdapter {
             viewHolder.mSettingAppTV=(TextView) view.findViewById(R.id.tv_setting_app);
             viewHolder.mShareAppTV=(TextView) view.findViewById(R.id.tv_share_app);
             viewHolder.mUninstallTV=(TextView) view.findViewById(R.id.tv_uninstall_app);
-            viewHolder.mAppAboutTV=(TextView)view.findViewById(R.id.tv_about_app);
+            viewHolder.mAppAboutTV=(Button) view.findViewById(R.id.tv_about_app);
             viewHolder.mAppOptionLL=(LinearLayout) view.findViewById(R.id.ll_option_app);
             view.setTag(viewHolder);
         }
@@ -144,7 +145,7 @@ static class ViewHolder{
     //app大小
     TextView mAppNameTV;
     //app名称
-    TextView mAppAboutTV;
+    Button mAppAboutTV;
     //app详情
     LinearLayout mAppOptionLL;
     //操作app的线性布局
