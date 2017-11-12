@@ -24,6 +24,10 @@ public class AppInfo {
     //是否用户应用
     public boolean isSelected=false;
     //是否选中，默认为false
+    public String mVersion;
+    public String InstallTime;
+    public String certificate;
+    public String permission;
 /**拿到app位置字符串*/
 
 public String getAppLoaction(boolean isInRoom){

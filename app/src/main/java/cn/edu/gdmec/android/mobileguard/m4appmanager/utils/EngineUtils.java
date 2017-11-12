@@ -2,6 +2,7 @@ package cn.edu.gdmec.android.mobileguard.m4appmanager.utils;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -9,9 +10,6 @@ import android.widget.Toast;
 
 import cn.edu.gdmec.android.mobileguard.m4appmanager.AppManagerActivity;
 import cn.edu.gdmec.android.mobileguard.m4appmanager.entity.AppInfo;
-
-import static android.R.attr.permission;
-import static android.R.attr.version;
 
 /**
  * Created by Administrator on 2017/11/11 0011.
@@ -61,11 +59,24 @@ public class EngineUtils {
         }
     }
     //显示app信息
-    public static void showaboutApplication(Context context,AppInfo appInfo){
+    public static void showaboutApplication(Context context,AppInfo appInfo) {
+               final AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                builder.setTitle(appInfo.appName);
+                builder.setMessage("Version："+appInfo.mVersion+
+                               "\nInstall time："+appInfo.InstallTime+
+                                "\nCertificate issuer："+appInfo.certificate+
+                                "\n\nPermissions："+appInfo.permission);
+                builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+             @Override
+             public void onClick(DialogInterface dialogInterface, int i) {
+                              dialogInterface.dismiss();
+                            }
+         });
+                builder.show();
+            }
+ }
 
-        Intent it = new Intent();
-        it.setAction(Intent.ACTION_APPLICATION_PREFERENCES);
-        context.startActivity(it);
+
 //        Intent intent = new Intent();
 //        intent.setAction("android..APPLICATION_DETAILS_SETTINGS");
 //        intent.addCategory(Intent.CATEGORY_DEFAULT);
@@ -80,6 +91,3 @@ public class EngineUtils {
 //                 .show();
 
 
-    }
-
-}

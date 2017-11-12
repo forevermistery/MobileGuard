@@ -112,6 +112,12 @@
         //管家模块2017.11.06
         <activity android:name=".m4appmanager.AppManagerActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <!--<intent-filter>-->
+                <!--<category android:name="android.intent.category.DEFAULT"/>-->
+                <!--<action android:name="android.intent.action.ACTION_APPLICATION_PREFERENCES"/>-->
+            <!--</intent-filter>-->
+
+
 
     </application>
 

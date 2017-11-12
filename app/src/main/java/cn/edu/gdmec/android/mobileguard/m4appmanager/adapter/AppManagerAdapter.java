@@ -1,7 +1,10 @@
 package cn.edu.gdmec.android.mobileguard.m4appmanager.adapter;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.support.v4.content.ContextCompat;
+
 import android.text.format.Formatter;
 import android.view.View;
 import android.view.ViewGroup;
@@ -181,9 +184,10 @@ class MyClickListener implements View.OnClickListener{
                 EngineUtils.uninstallApplication(context,appInfo);
                 break;
             case R.id.tv_about_app:
-                EngineUtils.showaboutApplication(context,appInfo);
+               EngineUtils.showaboutApplication(context,appInfo);
                 break;
         }
     }
+
 }
 }
