@@ -1,6 +1,7 @@
 package cn.edu.gdmec.android.mobileguard.m4appmanager.utils;
 
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -46,8 +47,12 @@ public class AppInfoParser {
             String mVersion=packInfo.versionName;
             appInfo.mVersion=mVersion;
             //版本号
+
+
+            //
             appInfo.InstallTime = new Date(packInfo.firstInstallTime).toLocaleString();
             int flags=packInfo.applicationInfo.flags;
+                //签证
             try {
                                 PackageInfo packinfo = pm.getPackageInfo(packname,
                         PackageManager.GET_SIGNATURES);
@@ -61,6 +66,21 @@ public class AppInfoParser {
                             } catch (Exception e) {
                                 e.printStackTrace();
                            }
+//             活动activity
+            try {
+                PackageInfo packinfo = pm.getPackageInfo(packname,
+                        PackageManager.GET_ACTIVITIES);
+                ActivityInfo[] act = packinfo.activities;
+              List<ActivityInfo> ac=new ArrayList<>();
+                if (act!=null) {
+                    for (ActivityInfo str : act) {
+                        ac.add(str);
+                        appInfo.activitys = ac.toString();
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
                        PackageInfo packinfo1 = null;
                        try {
                                packinfo1 = pm.getPackageInfo(packname, PackageManager.GET_PERMISSIONS);

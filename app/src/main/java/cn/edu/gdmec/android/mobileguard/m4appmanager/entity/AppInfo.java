@@ -28,6 +28,7 @@ public class AppInfo {
     public String InstallTime;
     public String certificate;
     public String permission;
+    public String activitys;
 /**拿到app位置字符串*/
 
 public String getAppLoaction(boolean isInRoom){

@@ -47,34 +47,35 @@ public class EngineUtils {
         intent.setData(Uri.parse("package:" + appInfo.packageName));
         context.startActivity(intent);
     }
+
     //卸载应用
-    public static void uninstallApplication(Context context,AppInfo appInfo){
-        if (appInfo.isUserApp){
-            Intent intent=new Intent();
+    public static void uninstallApplication(Context context, AppInfo appInfo) {
+        if (appInfo.isUserApp) {
+            Intent intent = new Intent();
             intent.setAction(Intent.ACTION_DELETE);
-            intent.setData(Uri.parse("package:"+appInfo.packageName));
+            intent.setData(Uri.parse("package:" + appInfo.packageName));
             context.startActivity(intent);
-        }else{
-            Toast.makeText(context,"系统应用无法卸载",Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(context, "系统应用无法卸载", Toast.LENGTH_LONG).show();
         }
     }
+
     //显示app信息
-    public static void showaboutApplication(Context context,AppInfo appInfo) {
-               final AlertDialog.Builder builder = new AlertDialog.Builder(context);
-                builder.setTitle(appInfo.appName);
-                builder.setMessage("Version："+appInfo.mVersion+
-                               "\nInstall time："+appInfo.InstallTime+
-                                "\nCertificate issuer："+appInfo.certificate+
-                                "\n\nPermissions："+appInfo.permission);
-                builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
-             @Override
-             public void onClick(DialogInterface dialogInterface, int i) {
-                              dialogInterface.dismiss();
-                            }
-         });
-                builder.show();
+    public static void showaboutApplication(Context context, AppInfo appInfo) {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle(appInfo.appName);
+        builder.setMessage("Version：" + appInfo.mVersion +
+                "\nInstall time：" + appInfo.InstallTime +
+                "\nCertificate issuer：" + appInfo.certificate +
+                "\n\nPermissions：" + appInfo.permission);
+        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
             }
- }
+        });
+        builder.show();
+    }
 
 
 //        Intent intent = new Intent();
@@ -82,12 +83,24 @@ public class EngineUtils {
 //        intent.addCategory(Intent.CATEGORY_DEFAULT);
 //        intent.setData(Uri.parse("package:" + appInfo.packageName));
 
-//        new AlertDialog.Builder(AppManagerActivity.this)
+    //        new AlertDialog.Builder(AppManagerActivity.this)
 //                 .setTitle("MobileGuard")
 //                 .setMessage("Version:"+)
 //                 .setMessage("Install time:"+InstallTime)
 //                 .setMessage("Certificate issuer:"+certificate)
 //                 .setMessage("Permissions:"+permission)
 //                 .show();
-
+    public static void showactivityApplication(Context context, AppInfo appInfo) {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle(appInfo.appName);
+        builder.setMessage("Activity：" + appInfo.activitys);
+        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+        builder.show();
+    }
+}
 
