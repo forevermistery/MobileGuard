@@ -21,8 +21,9 @@ public class AntiVirusDao {
     //使用apk文件的md5值匹配病毒数据库
     public String checkVirus(String md5) {
         String desc = null;
+        //打开数据库
         SQLiteDatabase db = SQLiteDatabase.openDatabase(dbname, null, SQLiteDatabase.OPEN_READONLY);
-        Cursor cursor = db.rawQuery("select desc from datable where md5=?", new String[]{md5});
+        Cursor cursor = db.rawQuery("select desc from datable where md5=?", new String[]{ md5 });
         if (cursor.moveToNext()) {
             desc = cursor.getString(0);
         }
