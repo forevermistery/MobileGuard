@@ -74,7 +74,7 @@ public class VersionUpdateUtils {
         HttpClient httpClient=new DefaultHttpClient();
         HttpConnectionParams.setConnectionTimeout(httpClient.getParams(),5000);
         HttpConnectionParams.setSoTimeout(httpClient.getParams(),5000);
-        HttpGet httpGet=new HttpGet("http://android2017.duapp.com/updateinfo.html");
+        HttpGet httpGet=new HttpGet("http://android2017.duapp.com/antivirus.db");
             HttpResponse execute=httpClient.execute(httpGet);
             if(execute.getStatusLine().getStatusCode()==200){
                 HttpEntity httpEntity=execute.getEntity();

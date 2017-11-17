@@ -16,6 +16,7 @@ import android.widget.GridView;
 import android.widget.Toast;
 
 import cn.edu.gdmec.android.mobileguard.R;
+import cn.edu.gdmec.android.mobileguard.UpdateVirusActivity;
 import cn.edu.gdmec.android.mobileguard.m1home.adapter.HomeAdapter;
 import cn.edu.gdmec.android.mobileguard.m2theftgurad.dialog.InterPasswordDialog;
 import cn.edu.gdmec.android.mobileguard.m2theftgurad.dialog.SetUpPasswordDialog;
@@ -68,6 +69,11 @@ public class HomeActivity extends AppCompatActivity {
                         break;
                     case 3:
                         startActivity(VirusScanActivity.class);
+//                          if (VirusScanActivity.class.isAnnotation()){
+//                              startActivity(UpdateVirusActivity.class);
+//
+//                          }
+
                         break;
                     case 4:
 //                        startActivity(VirusScanActivity.class);
