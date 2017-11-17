@@ -116,6 +116,11 @@
                 <!--<category android:name="android.intent.category.DEFAULT"/>-->
                 <!--<action android:name="android.intent.action.ACTION_APPLICATION_PREFERENCES"/>-->
             <!--</intent-filter>-->
+        //杀毒模块2017.11.13
+        <activity android:name=".m5virusscan.VirusScanActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".m5virusscan.VirusScanSpeedActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
 
 
 

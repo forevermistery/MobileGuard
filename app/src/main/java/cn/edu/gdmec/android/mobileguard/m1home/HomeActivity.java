@@ -25,6 +25,7 @@ import cn.edu.gdmec.android.mobileguard.m2theftgurad.utils.MD5Utils;
 import cn.edu.gdmec.android.mobileguard.m3communicationguard.reveiver.AddBlackNumberActivity;
 import cn.edu.gdmec.android.mobileguard.m3communicationguard.reveiver.SecurityPhoneActivity;
 import cn.edu.gdmec.android.mobileguard.m4appmanager.AppManagerActivity;
+import cn.edu.gdmec.android.mobileguard.m5virusscan.VirusScanActivity;
 
 public class HomeActivity extends AppCompatActivity {
     private GridView gv_home;
@@ -65,6 +66,25 @@ public class HomeActivity extends AppCompatActivity {
                     case 2:
                         startActivity(AppManagerActivity.class);
                         break;
+                    case 3:
+                        startActivity(VirusScanActivity.class);
+                        break;
+                    case 4:
+//                        startActivity(VirusScanActivity.class);
+                        break;
+                    case 5:
+//                        startActivity(VirusScanActivity.class);
+                        break;
+                    case 6:
+//                        startActivity(VirusScanActivity.class);
+                        break;
+                    case 7:
+//                        startActivity(VirusScanActivity.class);
+                        break;
+                    case 8:
+//                        startActivity(VirusScanActivity.class);
+                        break;
+
                 }
             }
 
