@@ -29,19 +29,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <!--<activity android:name=".SplashActivity">-->
+        <activity android:name=".SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-        <!--</activity>-->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
 
             android:name=".m1home.HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme">
-            <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN" />-->
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+            <!--<category android:name="android.intent.category.LAUNCHER" />-->
+        <!--</intent-filter>-->
         </activity>
 <activity android:name=".m2theftgurad.utils.Setup1Activity"/>
         <activity android:name=".m2theftgurad.utils.Setup2Activity"/>
@@ -122,7 +126,6 @@
         <activity android:name=".m5virusscan.VirusScanActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             />
-        <activity android:name=".UpdateVirusActivity"/>
         <activity android:name=".m5virusscan.VirusScanSpeedActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
 
