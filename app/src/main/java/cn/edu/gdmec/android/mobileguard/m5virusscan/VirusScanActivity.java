@@ -1,13 +1,15 @@
 package cn.edu.gdmec.android.mobileguard.m5virusscan;
+/**
+ * Created by Administrator on 2017/11/17 0017.
+ */
 
-
-        import android.content.Intent;
-        import android.content.SharedPreferences;
-        import android.os.Environment;
-        import android.os.Handler;
-        import android.os.Message;
-        import android.support.v7.app.AppCompatActivity;
-        import android.os.Bundle;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Environment;
+import android.os.Handler;
+import android.os.Message;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
         import android.util.Log;
         import android.view.View;
         import android.widget.ImageView;
