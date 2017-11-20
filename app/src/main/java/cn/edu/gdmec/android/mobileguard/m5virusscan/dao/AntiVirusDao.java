@@ -1,46 +1,38 @@
 package cn.edu.gdmec.android.mobileguard.m5virusscan.dao;
-
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-
 /**
- * Created by Administrator on 2017/11/17 0017.
+ * Created by Lee on 2017/11/17.
  */
 
 public class AntiVirusDao {
-    //检查某个md5是否是病毒
-    private static Context context;
+    private  Context context;
     private static String dbname;
     public AntiVirusDao(Context context){
-        this.context=context;
-        dbname="/data/data/"+context.getPackageName()+"/files/antivirus.db";
-
+        this.context = context;
+        dbname = "/data/data/"+context.getPackageName()+"/files/antivirus.db";
     }
-
-    //使用apk文件的md5值匹配病毒数据库
-    public String checkVirus(String md5) {
+    public String checkVirus(String md5){
         String desc = null;
-        //打开数据库
-        SQLiteDatabase db = SQLiteDatabase.openDatabase(dbname, null, SQLiteDatabase.OPEN_READONLY);
-        Cursor cursor = db.rawQuery("select desc from datable where md5=?", new String[]{ md5 });
-        if (cursor.moveToNext()) {
+        SQLiteDatabase db = SQLiteDatabase.openDatabase(dbname,null,SQLiteDatabase.OPEN_READONLY);
+        Cursor cursor = db.rawQuery("select desc from datable where md5=?",new String[] { md5 });
+        if(cursor.moveToNext()){
             desc = cursor.getString(0);
         }
         cursor.close();
         db.close();
-        return  desc;
+        return desc;
     }
     public String getVirusVersion(){
-       String virusVersion = "";
-      SQLiteDatabase db = SQLiteDatabase.openDatabase(dbname, null, SQLiteDatabase.OPEN_READONLY);
-       Cursor cursor = db.rawQuery("select major||'.'||minor||'.'||build from version",null);
+        String virusVersion = "";
+        SQLiteDatabase db = SQLiteDatabase.openDatabase(dbname, null, SQLiteDatabase.OPEN_READONLY);
+        Cursor cursor = db.rawQuery("select major||'.'||minor||'.'||build from version",null);
         if (cursor.moveToNext()) {
-         virusVersion = cursor.getString(0);
-           }
+            virusVersion = cursor.getString(0);
+        }
         cursor.close();
         db.close();
-              return virusVersion;
-          }
- }
-
+        return virusVersion;
+    }
+}

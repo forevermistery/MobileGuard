@@ -56,6 +56,7 @@ public class VirusScanSpeedActivity extends AppCompatActivity implements View.On
     private List<ScanAppInfo> mScanAppInfos = new ArrayList<ScanAppInfo>();
     private SharedPreferences mSP;
     private Handler mHandler = new Handler(){
+        @Override
         public void handleMessage(android.os.Message msg){
             switch (msg.what){
                 case SCAN_BEGIN:
@@ -103,6 +104,7 @@ public class VirusScanSpeedActivity extends AppCompatActivity implements View.On
         process = 0;
         mScanAppInfos.clear();
         new Thread(){
+            @Override
             public void run(){
                 Message msg = Message.obtain();
                 msg.what = SCAN_BEGIN;
@@ -156,10 +158,10 @@ public class VirusScanSpeedActivity extends AppCompatActivity implements View.On
         mLeftImgv.setOnClickListener(this);
         mLeftImgv.setImageResource(R.drawable.back);
         mProcessTV = (TextView) findViewById(R.id.tv_scanprocess);
-        mScanAppTV = (TextView) findViewById(R.id.tv_scanapp);
+        mScanAppTV = (TextView) findViewById(R.id.tv_scansapp);
         mCancleBtn = (Button) findViewById(R.id.btn_canclescan);
         mCancleBtn.setOnClickListener(this);
-        mScanListView = (ListView) findViewById(R.id.tv_scanapp);
+        mScanListView = (ListView) findViewById(R.id.tv_scanapps);
         adapter = new ScanVirusAdapter(mScanAppInfos,this);
         mScanListView.setAdapter(adapter);
         mScanningIcon = (ImageView) findViewById(R.id.imgv_scanningicon);
@@ -202,3 +204,4 @@ public class VirusScanSpeedActivity extends AppCompatActivity implements View.On
         super.onDestroy();
     }
 }
+
