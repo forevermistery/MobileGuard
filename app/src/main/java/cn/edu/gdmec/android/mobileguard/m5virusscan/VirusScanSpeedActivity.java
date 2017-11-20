@@ -159,7 +159,7 @@ public class VirusScanSpeedActivity extends AppCompatActivity implements View.On
         mScanAppTV = (TextView) findViewById(R.id.tv_scanapp);
         mCancleBtn = (Button) findViewById(R.id.btn_canclescan);
         mCancleBtn.setOnClickListener(this);
-        mScanListView = (ListView) findViewById(R.id.tv_scanapp);
+        mScanListView = (ListView) findViewById(R.id.lv_scanapps);
         adapter = new ScanVirusAdapter(mScanAppInfos,this);
         mScanListView.setAdapter(adapter);
         mScanningIcon = (ImageView) findViewById(R.id.imgv_scanningicon);
