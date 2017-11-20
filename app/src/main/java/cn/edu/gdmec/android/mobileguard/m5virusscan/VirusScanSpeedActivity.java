@@ -34,7 +34,7 @@ import cn.edu.gdmec.android.mobileguard.m5virusscan.dao.AntiVirusDao;
 import cn.edu.gdmec.android.mobileguard.m5virusscan.entity.ScanAppInfo;
 
 /**
- * Created by Lee on 2017/11/18.
+ * Created by Lee on 2017/11/18.   s
  */
 
 public class VirusScanSpeedActivity extends AppCompatActivity implements View.OnClickListener{
