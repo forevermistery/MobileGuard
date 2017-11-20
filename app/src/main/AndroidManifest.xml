@@ -20,6 +20,8 @@
     <uses-permission android:name="android.permission.WRITE_CALL_LOG"/>
     <!--杀毒模块-->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!--缓存清理-->
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>
 
     <application
       android:name=".App"
@@ -128,6 +130,9 @@
             />
         <activity android:name=".m5virusscan.VirusScanSpeedActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+<!--缓存清理2017.11.20-->
+        <activity android:name=".m6cleancache.CacheClearListActivity"/>
+        <activity android:name=".m6cleancache.CleanCacheActivity"/>
 
 
 
