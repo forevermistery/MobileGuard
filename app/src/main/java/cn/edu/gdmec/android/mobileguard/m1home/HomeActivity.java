@@ -82,7 +82,7 @@ public class HomeActivity extends AppCompatActivity {
 
                     case 6:
                         startActivity(TrafficMonitoringActivity.class);
-                        break;
+                  break;
                     case 7:
 //                        startActivity(VirusScanActivity.class);
                         break;
