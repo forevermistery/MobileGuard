@@ -140,8 +140,18 @@
         <!--流量查询217.11.26-->
         <activity android:name=".m8trafficmonitor.OperatorSetActivity"/>
         <activity android:name=".m8trafficmonitor.TrafficMonitoringActivity"/>
+        <service android:name=".m8trafficmonitor.service.TrafficMonitoringService"
+                    android:enabled="true"
+                   android:exported="true"
+                   android:persistent="true"/>
+        <receiver android:name=".m8trafficmonitor.reciever.BootCompleteReciever"
+                         android:enabled="true"
+                          android:exported="true">
+                    <intent-filter>
+                        <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                    </intent-filter>
 
-
+</receiver>
 
 
     </application>
