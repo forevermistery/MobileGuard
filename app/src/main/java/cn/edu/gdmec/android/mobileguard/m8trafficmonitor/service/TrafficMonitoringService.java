@@ -59,7 +59,7 @@ public class TrafficMonitoringService extends Service{
             }
             SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
             String dataString =sdf.format(date);
-            long mobileGPRS=dao.getMobileGPRS(dataString);
+            long mobileGPRS=dao.getMoblieGPRS(dataString);
             long mobileRxBytes=TrafficStats.getMobileRxBytes();
             long mobileTxBytes=TrafficStats.getMobileTxBytes();
             //新产生的流量

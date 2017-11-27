@@ -108,7 +108,7 @@ public class TrafficMonitoringActivity extends Activity implements
         Date date = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String dataString = sdf.format(date);
-        long moblieGPRS = dao.getMobileGPRS(dataString);
+        long moblieGPRS = dao.getMoblieGPRS(dataString);
         if (moblieGPRS < 0) {
             moblieGPRS = 0;
         }
