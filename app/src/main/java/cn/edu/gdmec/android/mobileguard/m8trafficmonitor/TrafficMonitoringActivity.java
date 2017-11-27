@@ -50,7 +50,7 @@ public class TrafficMonitoringActivity extends Activity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_triffic_monitor);
+        setContentView(R.layout.activity_traffic_monitor);
         mSP = getSharedPreferences("config", MODE_PRIVATE);
         boolean flag = mSP.getBoolean("isset_operator", false);
         // 如果没有设置运营商信息则进入信息设置页面
