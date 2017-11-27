@@ -30,7 +30,7 @@ import cn.edu.gdmec.android.mobileguard.m8trafficmonitor.service.TrafficMonitori
 import cn.edu.gdmec.android.mobileguard.m8trafficmonitor.utils.SystemInfoUtils;
 
 /**
- * Created by zhh on 2017/11/26.
+ * Created by Jack on 2017/11/27.
  */
 
 
@@ -245,4 +245,3 @@ public class TrafficMonitoringActivity extends Activity implements
         super.onDestroy();
     }
 }
-
