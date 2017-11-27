@@ -23,6 +23,7 @@
     <!--缓存清理-->
     <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
     <uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>
+<!--流量查询-->
 
 
 
@@ -136,6 +137,10 @@
 <!--缓存清理2017.11.20-->
         <activity android:name=".m6cleancache.CacheClearListActivity"/>
         <activity android:name=".m6cleancache.CleanCacheActivity"/>
+        <!--流量查询217.11.26-->
+        <activity android:name=".m8trafficmonitor.OperatorSetActivity"/>
+        <activity android:name=".m8trafficmonitor.TrafficMonitoringActivity"/>
+
 
 
 
