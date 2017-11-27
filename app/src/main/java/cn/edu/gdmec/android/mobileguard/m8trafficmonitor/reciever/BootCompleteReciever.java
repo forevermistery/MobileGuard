@@ -1,4 +1,4 @@
-package cn.edu.gdmec.android.mobileguard.m8trafficmonitor.reciever;
+package cn.edu.gdmec.android.mobileguard.m8trafficmonitor.receiver;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -9,14 +9,16 @@ import cn.edu.gdmec.android.mobileguard.m8trafficmonitor.service.TrafficMonitori
 import cn.edu.gdmec.android.mobileguard.m8trafficmonitor.utils.SystemInfoUtils;
 
 /**
- * Created by zhh on 2017/11/26.
+ * Created by zhh on 2017/11/27.
  */
 
 public class BootCompleteReciever extends BroadcastReceiver{
     @Override
-    public void onReceive(Context context, Intent intent) {
-        if(!SystemInfoUtils.isServiceRunning(context,
-                "cn.edu.gdmec.android.monileguard.m8trafficmonitor.service.TrafficMonitoringService")){
+    public void onReceive(Context context, Intent intent){
+
+        if (!SystemInfoUtils.isServiceRunning(context,
+                "cn.edu.gdmec.android.mobileguard.m8trafficmonitor.service.TrafficMonitoringService")){
+
             Log.d("traffic service","turn on");
             context.startService(new Intent(context, TrafficMonitoringService.class));
         }
