@@ -185,6 +185,7 @@ public class VersionUpdateUtils {
         };
         context.registerReceiver(broadcastReceiver, intentFilter);
 
+
     }
     public interface DownloadCallback{
         void afterDownload(String filename);
