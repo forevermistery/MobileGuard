@@ -84,7 +84,7 @@ public class TrafficMonitoringService extends Service {
                 if (moblieGPRS < 0) {
                     moblieGPRS = 0;
                 }
-                dao.UpdataTodayGPRS(moblieGPRS + newGprs);
+                dao.UpdateTodayGPRS(moblieGPRS + newGprs);
             }
             usedFlow = usedFlow + newGprs;
             SharedPreferences.Editor edit = mSp.edit();
