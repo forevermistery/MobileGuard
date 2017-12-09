@@ -150,11 +150,12 @@
                           android:exported="true">
                     <intent-filter>
                         <action android:name="android.intent.action.BOOT_COMPLETED"/>
-                    </intent-filter>
-
-</receiver>
+                    </intent-filter></receiver>
 
 
+        <!--高级工具2017.12.09-->
+        <activity android:name=".m9advancedtools.AdvancedToolsActivity"/>
+        <activity android:name=".m9advancedtools.NumBelongtoAcivity"/>
     </application>
 
 </manifest>
