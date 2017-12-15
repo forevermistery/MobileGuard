@@ -47,6 +47,9 @@ public class AdvancedToolsActivity extends AppCompatActivity implements View.OnC
 
                 startActivity(NumBelongtoAcivity.class);
                 break;
+            case R.id.advanceview_applock:
+                startActivity(AppLockActivity.class);
+                break;
         }
     }
 

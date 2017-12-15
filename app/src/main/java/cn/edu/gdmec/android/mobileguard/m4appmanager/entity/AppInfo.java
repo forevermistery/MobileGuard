@@ -39,4 +39,7 @@ public String getAppLoaction(boolean isInRoom){
         return "外部存储";
     }
 }
+
+   /** 应用程序是否加锁*/
+   public boolean isLock;
 }
